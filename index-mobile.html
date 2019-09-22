@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" class="notion-html notion-mobile" style="height: 736px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Hippocratic Design</title>
+</head>
+
+<body class="notion-body" style="height: 736px; margin:0;">
+    <style>
+        body {
+            background: #fff
+        }
+
+        .initial-loading-spinner {
+            -webkit-animation: rotate 1s linear infinite;
+            animation: rotate 1s linear infinite;
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            width: 1em;
+            height: 1em;
+            opacity: .5;
+            display: block;
+            pointer-events: none
+        }
+
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0) translateZ(0);
+                transform: rotate(0) translateZ(0)
+            }
+            100% {
+                -webkit-transform: rotate(360deg) translateZ(0);
+                transform: rotate(360deg) translateZ(0)
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0) translateZ(0);
+                transform: rotate(0) translateZ(0)
+            }
+            100% {
+                -webkit-transform: rotate(360deg) translateZ(0);
+                transform: rotate(360deg) translateZ(0)
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        var isElectron = "undefined" != typeof global || window.__isElectron,
+            isCordova = /Cordova/.test(navigator.userAgent),
+            isReactNative = /ReactNative/.test(navigator.userAgent),
+            showSpinner = isCordova || isElectron || isReactNative;
+        if (showSpinner) {
+            var spinner = document.getElementById("initial-loading-spinner");
+            spinner && (spinner.style.opacity = 1)
+        }
+    </script>
+    <script type="text/javascript">
+        var theme = "light",
+            localThemeKey = "theme",
+            themeRecord = localStorage.getItem("theme");
+        if (themeRecord) {
+            var parsed = JSON.parse(themeRecord);
+            parsed && parsed.mode && (theme = parsed.mode)
+        }
+        "dark" === theme && document.body.classList.add("dark")
+    </script>
+    <div id="notion-app" style="height: 736px;">
+        <div class="notion-app-inner notion-light-theme" style="color: rgb(55, 53, 47); fill: currentcolor; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; -webkit-font-smoothing: auto;">
+            <div class="notion-cursor-listener" style="width: 100vw; height: 100%; position: relative; display: flex; flex: 1 1 0%; background: white; cursor: text;">
+                <div class="notion-frame" style="flex-grow: 1; flex-shrink: 1; display: flex; flex-direction: column; background: white; z-index: 1; width: calc(100vw - 240px); height: 100vh; max-height: 100%; box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px; pointer-events: auto; transform: translateX(0px);">
+                    <div class="notion-scroller vertical horizontal" style="display: flex; flex-direction: column; z-index: 1; flex-grow: 1; position: relative; align-items: center; overflow: auto; transform: translate3d(0px, 0px, 0px); will-change: scroll-position, transform;">
+                        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; flex-grow: 0;">
+                            <div style="padding-left: calc( env(safe-area-inset-left) + 24px ); padding-right: calc( env(safe-area-inset-right) + 24px ); max-width: 100%; margin-bottom: 0.5em; width: 100%;">
+                                <div class="notion-page-controls" style="display: flex; align-items: center; justify-content: center; color: rgba(55, 53, 47, 0.4); opacity: 1; pointer-events: auto; transition: opacity 300ms ease-out 0s; min-height: 28px; margin-top: 16px; margin-bottom: 2em; margin-left: -1px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;"></div>
+                                <div data-block-id="1f1a781a-e518-472c-990c-a82b72074333" class="notion-selectable" style="transition: transform 200ms ease-out 0s; color: rgb(55, 53, 47); font-weight: 700; letter-spacing: -0.003em; line-height: 1.1; margin-bottom: 0.25em; font-size: 2em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; cursor: text; display: flex; align-items: center;">
+                                    <div contenteditable="false" spellcheck="true" placeholder="Untitled" data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">Hippocratic Design</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notion-page-content" style="flex-shrink: 0; flex-grow: 1; width: 100%; max-width: 100%; display: flex; align-items: center; flex-direction: column; font-size: 16px; color: rgb(55, 53, 47); padding-top: 0px; padding-left: calc( env(safe-area-inset-left) + 24px ); padding-right: calc( env(safe-area-inset-right) + 24px ); padding-bottom: 350px;">
+                            <div data-block-id="482d31a0-0ee2-4cd9-b759-021d4a3badd3" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px;">
+                                <div style="color: inherit; fill: inherit;">
+                                    <div style="display: flex;">
+                                        <div contenteditable="false" spellcheck="true" placeholder=" " data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">A collection of inspirations, tools and articles for healthcare professionals, researchers and designers to create meaningful experiences through problem-solving.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-block-id="f7316c77-1aa3-44b8-817b-8828934565cf" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                <div style="color: inherit; fill: inherit;">
+                                    <div style="display: flex;">
+                                        <div contenteditable="false" spellcheck="true" placeholder=" " data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; min-height: 1em; color: rgb(55, 53, 47); -webkit-text-fill-color: rgba(55, 53, 47, 0.4);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-block-id="c8e9a682-5843-45f4-92f6-29c06c015e0c" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; align-self: center; margin-top: 1px; margin-bottom: 1px;">
+                                <div style="display: block;">
+                                    <div style="padding-top: 12px; padding-bottom: 12px; width: 100%;">
+                                        <div data-block-id="af119f5a-3773-477e-ba87-6ac6c97998e1" class="notion-selectable" style="transition: transform 200ms ease-out 0s; display: flex; flex-direction: column;">
+                                            <div data-block-id="fdf0315f-3666-4336-bdea-4ab517999ef1" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px; color: rgb(55, 53, 47);">
+                                                <div style="display: flex; width: 100%; font-weight: 600; font-size: 1.25em; letter-spacing: -0.002em; line-height: 1.2; color: inherit; fill: inherit;">
+                                                    <div contenteditable="false" spellcheck="true" placeholder="Heading 2" data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">Inspirations</div>
+                                                </div>
+                                            </div>
+                                            <div data-block-id="9cd5027b-c52b-4d32-a9b6-079fd666a4ff" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 144px; max-width: 100%; align-self: flex-start; margin-top: 0.5em; margin-bottom: 0.5em;">
+                                                <div>
+                                                    <div style="display: flex;">
+                                                        <div class="notion-cursor-default" style="position: relative; overflow: hidden; flex-grow: 1;">
+                                                            <div style="position: relative;">
+                                                                <div style="height: 100%; width: 100%;"><img src="assets/inspirations.png" style="display: block; object-fit: cover; border-radius: 1px; width: 100%; pointer-events: auto; user-select: none;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-block-id="549c8c6a-0449-491c-8750-fe9aa52db0ab" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Mobile-App-549c8c6a0449491c8750fe9aa52db0ab" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/cursor.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Mobile App</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="b72a793a-c502-4aaf-b212-08fc35d80900" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Web-App-b72a793ac5024aafb21208fc35d80900" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/cup.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Web App</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="2ab2afcd-b798-4f05-9883-e115a9589587" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Landing-Page-2ab2afcdb7984f059883e115a9589587" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/inbox.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Landing Page</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="35115ff4-8424-4cdb-9bdb-c79ebece04dc" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Startups-Companies-35115ff484244cdb9bdbc79ebece04dc" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/calendar.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Startups &amp; Companies</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="bd901bee-aa6b-4c8c-937c-a5d2cf537fd5" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Books-bd901beeaa6b4c8c937ca5d2cf537fd5" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/book-opened.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Books</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="b5c2b7fc-3a89-409d-8d81-aff4359d665d" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 0px;">
+                                                <a href="https://www.notion.so/Podcast-b5c2b7fc3a89409d8d81aff4359d665d" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/map.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Podcast</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="position: relative; width: 46px; flex-grow: 0; flex-shrink: 0; transition: opacity 200ms ease-out 0s; opacity: 0;"></div>
+                                    <div style="padding-top: 12px; padding-bottom: 12px; width: 100%;">
+                                        <div data-block-id="08714537-46e7-4702-9387-e5a820f37c0c" class="notion-selectable" style="transition: transform 200ms ease-out 0s; display: flex; flex-direction: column;">
+                                            <div data-block-id="de251f6f-1de7-44ad-b3d6-035fcddf064a" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px; color: rgb(55, 53, 47);">
+                                                <div style="display: flex; width: 100%; font-weight: 600; font-size: 1.25em; letter-spacing: -0.002em; line-height: 1.2; color: inherit; fill: inherit;">
+                                                    <div contenteditable="false" spellcheck="true" placeholder="Heading 2" data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">Tools</div>
+                                                </div>
+                                            </div>
+                                            <div data-block-id="2521fd6a-68bd-4908-9ae5-78d55107eb5b" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 192px; max-width: 100%; align-self: flex-start; margin-top: 0.5em; margin-bottom: 0.5em;">
+                                                <div>
+                                                    <div style="display: flex;">
+                                                        <div class="notion-cursor-default" style="position: relative; overflow: hidden; flex-grow: 1;">
+                                                            <div style="position: relative;">
+                                                                <div style="height: 100%; width: 100%;"><img src="assets/tools.png" style="display: block; object-fit: cover; border-radius: 1px; width: 100%; pointer-events: auto; user-select: none;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-block-id="78654ad6-cbc4-4ac8-a978-377fdf60cc68" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Prototyping-Tool-78654ad6cbc44ac8a978377fdf60cc68" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/suitcase.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Prototyping Tool</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="31c43fa6-6344-4ded-868b-a11ae64c1441" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/31c43fa663444ded868ba11ae64c1441?v=b53066bdb0104fb1b86878ec0a9beabf" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/lightbulb.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Design System</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="a3be163d-a3aa-4d5d-96c0-a56a8e0b8b19" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Design-Toolkit-a3be163da3aa4d5d96c0a56a8e0b8b19" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/edit.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Design Toolkit</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="5b121ee6-9991-4434-a598-c9f126716fd0" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Design-Principle-5b121ee699914434a598c9f126716fd0" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/tool.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Design Principle</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="5b2483d1-98d7-4cbd-86d1-d9c2346f73b9" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Crowdfunding-5b2483d198d74cbd86d1d9c2346f73b9" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/paperclip.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Crowdfunding</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="a9c309b5-f6d3-4089-ba57-18c02537232c" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 0px;">
+                                                <a href="https://www.notion.so/Accessbility-a9c309b5f6d34089ba5718c02537232c" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/lock.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Accessbility</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="position: relative; width: 46px; flex-grow: 0; flex-shrink: 0; transition: opacity 200ms ease-out 0s; opacity: 0;"></div>
+                                    <div style="padding-top: 12px; padding-bottom: 12px; width: 100%;">
+                                        <div data-block-id="dd332128-4248-4cc0-8480-6d8fc5a0ab10" class="notion-selectable" style="transition: transform 200ms ease-out 0s; display: flex; flex-direction: column;">
+                                            <div data-block-id="5f6e4376-dd78-4927-a28a-c123484118c4" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px; color: rgb(55, 53, 47);">
+                                                <div style="display: flex; width: 100%; font-weight: 600; font-size: 1.25em; letter-spacing: -0.002em; line-height: 1.2; color: inherit; fill: inherit;">
+                                                    <div contenteditable="false" spellcheck="true" placeholder="Heading 2" data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">Articles</div>
+                                                </div>
+                                            </div>
+                                            <div data-block-id="c0ef4113-3eb3-4639-87b4-0f84430fdeae" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 108px; max-width: 100%; align-self: flex-start; margin-top: 0.5em; margin-bottom: 0.5em;">
+                                                <div>
+                                                    <div style="display: flex;">
+                                                        <div class="notion-cursor-default" style="position: relative; overflow: hidden; flex-grow: 1;">
+                                                            <div style="position: relative;">
+                                                                <div style="height: 100%; width: 100%;"><img src="assets/articles.png" style="display: block; object-fit: cover; border-radius: 1px; width: 100%; pointer-events: auto; user-select: none;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-block-id="563cd365-3672-41d6-938e-c587a095544e" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Culture-563cd365367241d6938ec587a095544e" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/chart.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Culture</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="70558c6c-049c-473a-bb34-17c46d04e808" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Process-70558c6c049c473abb3417c46d04e808" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/favourite.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Process</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="53898a1c-b2e8-4919-b1b7-9585650755f8" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Case-Studies-53898a1cb2e84919b1b79585650755f8" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/save.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Case Studies</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="56bcc2c1-1f33-417b-b8ea-9ff9f43c8953" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Careers-56bcc2c11f33417bb8ea9ff9f43c8953" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/clipboard.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Careers</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="a3aefd44-0972-438d-8335-6b2c9cf4dff6" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                                <a href="https://www.notion.so/Research-a3aefd440972438d83356b2c9cf4dff6" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/bolt.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Research</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div data-block-id="3a78295c-f244-439e-9959-95ccbba14f94" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 0px;">
+                                                <a href="https://www.notion.so/Blog-3a78295cf244439e995995ccbba14f94" rel="noopener noreferrer" style="display: block; color: inherit; text-decoration: none; fill: inherit;">
+                                                    <div role="button" style="cursor: pointer; user-select: none; transition: background 120ms ease-in 0s; width: 100%;">
+                                                        <div style="display: flex; align-items: center; width: 100%;">
+                                                            <div style="margin-right: 4px; width: 24px; flex-grow: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; min-height: calc((1.5em + 3px) + 3px);">
+                                                                <div class="notion-record-icon" role="button" aria-disabled="true" style="cursor: default; user-select: none; transition: background 120ms ease-in 0s; display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border-radius: 3px; flex-shrink: 0;">
+                                                                    <div>
+                                                                        <div style="width: 100%; height: 100%;"><img src="assets/cart.png" style="display: block; object-fit: cover; border-radius: 3px; width: 19.536px; height: 19.536px; transition: opacity 100ms ease-out 0s; user-select: none;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="flex: 1 1 0px; min-width: 1px; padding-top: 3px; padding-bottom: 3px; padding-left: 2px;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; line-height: 1.3; border-bottom: 1px solid rgba(55, 53, 47, 0.16);">Blog</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-block-id="946e17cb-e1e5-4eea-b663-6804775e9b9c" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                <div class="notion-cursor-default" style="display: flex; align-items: center; justify-content: center; pointer-events: auto; width: 100%; height: 13px; flex: 0 0 auto; color: rgb(228, 227, 226);">
+                                    <div style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(55, 53, 47, 0.09);"></div>
+                                </div>
+                            </div>
+                            <div data-block-id="84807752-082a-4c64-8466-6eb0d4e790d2" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;">
+                                <div style="color: inherit; fill: inherit;">
+                                    <div style="display: flex;">
+                                        <div contenteditable="false" spellcheck="true" placeholder=" " data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">© 2019 Hippocratic Design | A project by <a href="http://madebychip.com/" style="text-decoration:underline;color:inherit;cursor:pointer;word-wrap:break-word" target="_blank" rel="noopener noreferrer" data-token-index="1">Chip Dong Lim</a>.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-block-id="7d406b9c-ccb9-4646-9d23-730be0e70123" class="notion-selectable" style="transition: transform 200ms ease-out 0s; width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 0px;">
+                                <div style="color: inherit; fill: inherit;">
+                                    <div style="display: flex;">
+                                        <div contenteditable="false" spellcheck="true" placeholder=" " data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; min-height: 1em; color: rgb(55, 53, 47); -webkit-text-fill-color: rgba(55, 53, 47, 0.4);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notion-presence-container" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 1;">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notion-overlay-container notion-default-overlay-container" style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 999; pointer-events: none; overflow: hidden;">
+                <div style="position: relative; z-index: 0;"></div>
+            </div>
+            <div class="notion-overlay-container" style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 1001; pointer-events: none; overflow: hidden;">
+                <div style="position: relative; z-index: 0;"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/pdf-extra-285cab246cec5e7d08f5.js"></script>
+    <script type="text/javascript" src="assets/vendors-86c1788ee9810528d8f8.js"></script>
+    <script type="text/javascript" src="assets/app-c9c306aaf4d643c7f315.js"></script>
+    <div style="position: fixed; height: 100vh; top: 0px; pointer-events: none;"></div>
+    <textarea style="opacity: 0; pointer-events: none; position: fixed; left: 0px; top: 0px;"></textarea>
+    <textarea style="opacity: 0; pointer-events: none; position: fixed; left: 0px; top: 0px;"></textarea>
+    </div>
+</body>
+
+</html>
